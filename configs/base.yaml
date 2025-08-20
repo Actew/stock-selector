@@ -1,0 +1,14 @@
+project_name: stock_select
+data:
+  dir: ${DATA_DIR}
+  tickers: ["ASELS.IS","THYAO.IS","BIMAS.IS"]
+  start: "2019-01-01"
+  end: null
+features:
+  technical: ["rsi","macd","ema_20","ema_50"]
+  scale: standard
+model:
+  type: "rf"
+  target_horizon_days: 63
+scoring:
+  weights: { ml: 0.6, fundamental: 0.4 }
